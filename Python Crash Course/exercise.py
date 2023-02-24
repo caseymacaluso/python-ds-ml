@@ -25,6 +25,9 @@ lst[3][1][2][0]
 d = {'k1':[1,2,3,{'tricky':['oh','man','inception',{'target':[1,2,3,'hello']}]}]}
 d['k1'][3]['tricky'][3]['target'][3]
 
+# Difference between tuple and list?
+# Tuple is IMMUTABLE, list is MUTABLE
+
 # Function for extracting email domain
 def email_dom(email):
     return email.split('@')[1]
