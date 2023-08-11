@@ -67,4 +67,7 @@ cdf = pd.DataFrame(lm.coef_, x.columns, columns=["Coefficient"])
 # Time on Website          0.190405
 # Length of Membership    61.279097
 
-# Based on this model, the company should focus on the app more. 1 minute spent on the app = ~$39 total amount spent
+# Based on this model, the app currently provides a better return than the website. 1 minute spent on the app = ~$39 total amount spent
+# There are other factors to consider here, such as cost to invest in the app vs the website, as well as how length of membership plays in to
+# total amount spent. Ultimately, it will be up to the business to decide if they want to fully invest in the app or try to come up with ways to
+# make the website more profitable.
