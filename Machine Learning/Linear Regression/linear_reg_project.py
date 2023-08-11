@@ -54,6 +54,7 @@ from sklearn import metrics
 print("MAE: ", metrics.mean_absolute_error(y_test, predictions))
 print("MSE: ", metrics.mean_squared_error(y_test, predictions))
 print("RMSE: ", np.sqrt(metrics.mean_squared_error(y_test, predictions)))
+print("R^2: ", metrics.explained_variance_score(y_test, predictions)) # 0.989, very good representation
 
 # Residuals are normally distributed, so things look good here as well.
 sns.distplot((y_test - predictions), bins=50)
