@@ -4,7 +4,11 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = empty-project-type
+<<<<<<< HEAD
 recent_files = []
+=======
+recent_files = ['Data Analysis\\Pandas\\pandas_exercises.py']
+>>>>>>> 354db38023933b94e0873ea68e24f34168fdd597
 
 [main]
 version = 0.2.0
