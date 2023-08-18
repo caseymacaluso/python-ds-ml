@@ -106,6 +106,9 @@ print(confusion_matrix(y_test, rfc_predictions))
 # [[2422    9]
 #  [ 431   12]]
 
-# Accuracy is about 12% higher with the random forest model, and we're seeing less misclassification here
+# Neither model did a superb job at capturing the data everywhere.
+# The decision tree model had better results for the '1' class in recall and f-score,
+# While the random forest model had better accuracy and misclassified observations less.
 
-# Overall, the random forest model worked better in this scenario.
+# Overall, the random forest model worked better in this scenario, but depending on the situation, the decision tree model
+# may be a better choice for the task at hand.
