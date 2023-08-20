@@ -25,7 +25,7 @@ You can find a breakdown of each major section of this repository below:
   - Decision Trees & Random Forests
   - Recommender Systems
   - Principal Component Analysis
-  - Natural Language Processing (in progress)
+  - Natural Language Processing
  
 Sections that are going to be added soon:
 - [ ] Neural Nets and Deep Learning
