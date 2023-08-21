@@ -7,6 +7,7 @@ This repo is a compilation of various subjects using Python, with a focus on are
 - Cufflinks
 - Matplotlib
 - Scikit-learn
+- Tensorflow (in progress)
 - And more...
 
 This repository was built as part of a course offered via Udemy: [Python for Data Science and Machine Learning Bootcamp](https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/)
@@ -26,7 +27,7 @@ You can find a breakdown of each major section of this repository below:
   - Recommender Systems
   - Principal Component Analysis
   - Natural Language Processing
+  - Neural Nets and Deep Learning (in progress)
  
 Sections that are going to be added soon:
-- [ ] Neural Nets and Deep Learning
 - [ ] Big Data and Spark
