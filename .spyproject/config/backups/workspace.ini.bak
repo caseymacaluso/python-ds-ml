@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = empty-project-type
-recent_files = ['Machine Learning\\Natural Language Processing\\nlp_notes.py', 'Machine Learning\\Natural Language Processing\\nlp_project.py']
+recent_files = ['Machine Learning\\Neural Nets & Deep Learning\\tf_basics.py', 'Machine Learning\\Neural Nets & Deep Learning\\keras_regression.py']
 
 [main]
 version = 0.2.0
