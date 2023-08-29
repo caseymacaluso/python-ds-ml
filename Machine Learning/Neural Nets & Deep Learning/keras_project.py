@@ -1,5 +1,11 @@
 # Tensorflow & Keras Project
 
+import random
+from sklearn.metrics import classification_report, confusion_matrix
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.models import Sequential
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -183,3 +189,49 @@ df['earliest_cr_year'] = df['earliest_cr_line'].apply(
     lambda x: pd.to_numeric(x.split('-')[1]))
 
 df.drop('earliest_cr_line', axis=1, inplace=True)
+df.drop('loan_status', axis=1, inplace=True)
+
+X = df.drop('loan_repaid', axis=1).values
+y = df['loan_repaid'].values
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=101)
+
+
+scaler = MinMaxScaler()
+
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+
+model = Sequential()
+model.add(Dense(78, activation='relu'))
+model.add(Dense(39, activation='relu'))
+model.add(Dense(19, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+model.compile(loss='binary_crossentropy', optimizer='adam')
+
+model.fit(x=X_train, y=y_train, epochs=25, validation_data=(
+    X_test, y_test), verbose=1, batch_size=256)
+
+model.save('loan_repayment_model.h5')
+
+losses = pd.DataFrame(model.history.history)
+
+losses.plot()
+
+predictions = (model.predict(X_test) > 0.5)*1
+
+
+print(classification_report(y_test, predictions))
+print(confusion_matrix(y_test, predictions))
+
+random.seed(101)
+random_ind = random.randint(0, len(df))
+
+new_customer = df.drop('loan_repaid', axis=1).iloc[random_ind]
+new_customer
+
+(model.predict(new_customer.values.reshape(1, 78)) > 0.5)*1
+
+df.iloc[random_ind]['loan_repaid']
