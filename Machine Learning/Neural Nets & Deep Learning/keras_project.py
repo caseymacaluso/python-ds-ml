@@ -277,8 +277,11 @@ X_test = scaler.transform(X_test)
 # Model Definition
 model = Sequential()
 model.add(Dense(78, activation='relu'))
+model.add(Dropout(0.2))
 model.add(Dense(39, activation='relu'))
+model.add(Dropout(0.2))
 model.add(Dense(19, activation='relu'))
+model.add(Dropout(0.2))
 model.add(Dense(1, activation='sigmoid'))
 model.compile(loss='binary_crossentropy', optimizer='adam')
 
@@ -302,15 +305,15 @@ print(confusion_matrix(y_test, predictions))
 
 #               precision    recall  f1-score   support
 
-#            0       0.91      0.48      0.63     15658
-#            1       0.88      0.99      0.93     63386
+#            0       0.97      0.45      0.61     15658
+#            1       0.88      1.00      0.93     63386
 
 #     accuracy                           0.89     79044
-#    macro avg       0.90      0.73      0.78     79044
-# weighted avg       0.89      0.89      0.87     79044
+#    macro avg       0.93      0.72      0.77     79044
+# weighted avg       0.90      0.89      0.87     79044
 
-# [[ 7463  8195]
-#  [  749 62637]]
+# [[ 6986  8672]
+#  [  199 63187]]
 
 # Testing model with random customer
 random.seed(101)
